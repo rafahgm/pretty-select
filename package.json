@@ -1,0 +1,14 @@
+{
+    "name": "pretty-select",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup src/index.ts"
+    },
+    "devDependencies": {
+        "tsup": "^7.1.0",
+        "typescript": "^5.1.6"
+    }
+}
