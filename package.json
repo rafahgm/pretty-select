@@ -1,13 +1,31 @@
 {
-    "name": "pretty-select",
+    "name": "select",
     "license": "MIT",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsup src/index.ts"
+        "build": "cross-env NODE_ENV=production tsup && cross-env NODE_ENV=production gulp",
+        "watch-js": "cross-env NODE_ENV=development tsup --watch",
+        "watch-scss": "cross-env NODE_ENV=development gulp watch",
+        "watch": "concurrently --kill-others \"pnpm run watch-js\" \"pnpm run watch-scss\""
     },
     "devDependencies": {
+        "autoprefixer": "^10.4.14",
+        "concurrently": "^8.2.0",
+        "cross-env": "^7.0.3",
+        "cssnano": "^6.0.1",
+        "gulp": "^4.0.2",
+        "gulp-cached": "^1.1.1",
+        "gulp-mode": "^1.1.0",
+        "gulp-postcss": "^9.0.1",
+        "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "postcss": "^8.4.26",
+        "postcss-scss": "^4.0.6",
+        "sass": "^1.63.6",
+        "stylelint": "^15.10.1",
+        "stylelint-config-standard-scss": "^10.0.0",
         "tsup": "^7.1.0",
         "typescript": "^5.1.6"
     }
