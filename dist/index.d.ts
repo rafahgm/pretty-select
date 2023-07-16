@@ -1,10 +1,13 @@
 declare global {
     interface Window {
-        PrettySelect: PrettySelect;
+        Select: any;
     }
 }
-declare class PrettySelect {
-    constructor(element: HTMLSelectElement);
+declare class Select {
+    elemento?: HTMLSelectElement;
+    opcoes: Array<Opcao>;
+    constructor(elemento: HTMLSelectElement | string, opcoes: OpcoesSelect);
+    private geraHTMLOpcoes;
 }
 
-export { PrettySelect as default };
+export { Select as default };
