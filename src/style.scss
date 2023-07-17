@@ -98,16 +98,16 @@ $cor-opcao-ativa-bg: #e9ecef;
             cursor: pointer;
             user-select: none;
 
-            &:not([data-nada]):hover {
-                @include opcao-ativa;
-            }
-
             &[data-nada] {
                 cursor: default;
             }
 
             mark {
                 background-color: rgb(255 237 40 / 40%);
+            }
+
+            &.ativo {
+                @include opcao-ativa;
             }
         }
     }

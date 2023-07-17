@@ -4,10 +4,20 @@ declare global {
     }
 }
 declare class Select {
-    elemento?: HTMLSelectElement;
-    opcoes: Array<Opcao>;
+    private elemento?;
+    private opcoes;
+    private wrapper;
+    private controle;
+    private pesquisa;
+    private opcoesContainer;
+    private aberto;
     constructor(elemento: HTMLSelectElement | string, opcoes: OpcoesSelect);
-    private geraHTMLOpcoes;
+    private geraDOMSelect;
+    private geraDOMOpcoes;
+    private fecharOpcoes;
+    private abrirOpcoes;
+    private onPesquisaFocus;
+    private onControleClick;
 }
 
 export { Select as default };
